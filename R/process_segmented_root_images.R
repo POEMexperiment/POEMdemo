@@ -11,7 +11,7 @@ process_segmented_root_images<-function(path, root.distribution=TRUE, res=2500, 
   files<-sort(list.files(path, full.names = TRUE, pattern="\\.png$"))
 
   #Source python code
-  reticulate::source_python(paste(system.file("python", package = "POEM"),"py_functions.py", sep="/"))
+  reticulate::source_python(paste(system.file("python", package = "POEMdemo"),"py_functions.py", sep="/"))
 
   #Create empty data frame to store results
 
