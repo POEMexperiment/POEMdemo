@@ -1,0 +1,22 @@
+Package: POEMdemo
+Type: Package
+Title: Processing of segmented (mini)rhizotron images
+Version: 0.1.0
+Date: 2022-10-20
+Author: Benjamin M. Delory
+Maintainer: Benjamin M. Delory <Benjamin.Delory@leuphana.de>
+Description: R package with functions to process segmented (mini)rhizotron images.
+Config/reticulate:
+  list(
+    packages = list(
+      list(package="scipy", pip=TRUE),
+      list(package="pandas", pip=TRUE),
+      list(package="Pillow", pip=TRUE),
+      list(package="numpy", pip=TRUE)
+    )
+  )
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Depends: shiny, tidyverse, reticulate, readxl
+Imports: zoo, lubridate, viridis, colourpicker, shinybusy, tcltk
