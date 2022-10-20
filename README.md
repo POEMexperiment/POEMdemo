@@ -6,6 +6,7 @@ R package with functions to process segmented (mini)rhizotron images. This R pac
 To install the package, run this code in your R console:
 
 install.packages("devtools")
+
 devtools::install_github("POEMexperiment/POEMdemo")
 
 # Run the rhizotron explorer (shiny app)
