@@ -43,7 +43,7 @@ Seethepalli A., Dhakal K., Griffiths M., Guo H., Freschet G.T., York L.M. (2021)
 }
 \author{Benjamin M. Delory}
 \examples{
-path <- system.file("extdata", package="POEM")
+path <- system.file("extdata", package="POEMdemo")
 
 data <- load_rhizovision_data(paste(path, "RVE/features.csv", sep="/"))
 }

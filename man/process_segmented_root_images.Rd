@@ -70,7 +70,7 @@ Alonso-Crespo I.M., Weidlich E.W.A., Temperton V.M., Delory B.M. (2022) Assembly
 }
 \author{Benjamin M. Delory}
 \examples{
-path <- system.file("extdata", package="POEM")
+path <- system.file("extdata", package="POEMdemo")
 
 data <- process_segmented_root_images(path=path, root.distribution=FALSE, res=2500, units="mm",
                                       POEM=TRUE, median.filter=TRUE, kernel.size=3)
