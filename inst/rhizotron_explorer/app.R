@@ -343,7 +343,7 @@ server <- function(input, output){
             incProgress(1/length(files), detail=paste("Image ", index, " of ", length(files), sep=""))
 
             features<-process_image(path=file,
-                                    binary=binary_images,
+                                    binary=input$binary_images,
                                     median_filter=input$median_filter,
                                     kernel=as.integer(input$kernel_size),
                                     root_distribution=input$root_distribution,
