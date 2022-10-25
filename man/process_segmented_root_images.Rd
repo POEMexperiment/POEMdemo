@@ -4,11 +4,12 @@
 \description{
 Calculate root density and distribution indices from segmented root images. This function was mainly designed to use segmented images produced with RootPainter. This image analysis pipeline is described in \cite{Alonso-Crespo et al (2022)}}
 \usage{
-process_segmented_root_images(path, root.distribution=TRUE, res=2500, units="mm",
-                              POEM=TRUE, median.filter=TRUE, kernel.size=3,
+process_segmented_root_images(path, RVE.images=TRUE, root.distribution=TRUE, res=2500, 
+                              units="mm", POEM=TRUE, median.filter=TRUE, kernel.size=3,
                               D=90, DRF=30)}
 \arguments{
 \item{path}{A mandatory character string. The string is a path to a folder containing segmented root images.}
+\item{RVE.images}{Boolean. Set to TRUE if the segmented images were converted for RhizoVision Explorer.}
 \item{root.distribution}{Boolean. Set to TRUE if root distribution indices should be calculated. These root distribution indices include the mean and maximun rooting depth in each image, the deep root fraction (DRF), and the depth value above which a certain proportion (D) of the root pixels are located.}
 \item{res}{The image resolution in dpi.}
 \item{units}{Desired units to express the results. Either "px", "mm" or "cm".}
@@ -72,6 +73,7 @@ Alonso-Crespo I.M., Weidlich E.W.A., Temperton V.M., Delory B.M. (2022) Assembly
 \examples{
 path <- system.file("extdata", package="POEMdemo")
 
-data <- process_segmented_root_images(path=path, root.distribution=FALSE, res=2500, units="mm",
-                                      POEM=TRUE, median.filter=TRUE, kernel.size=3)
+data <- process_segmented_root_images(path=path, RVE.images=FALSE, root.distribution=FALSE, 
+                                      res=2500, units="mm", POEM=TRUE, median.filter=TRUE, 
+                                      kernel.size=3)
 }

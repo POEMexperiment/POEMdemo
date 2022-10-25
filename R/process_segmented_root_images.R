@@ -4,7 +4,7 @@
 
 # This function returns a data frame that is ready to use for data exploration and analysis in R.
 
-process_segmented_root_images<-function(path, root.distribution=TRUE, res=2500, units="mm", POEM=TRUE,
+process_segmented_root_images<-function(path, RVE.images=TRUE, root.distribution=TRUE, res=2500, units="mm", POEM=TRUE,
                                         median.filter=TRUE, kernel.size=3, D=90, DRF=30){
 
   #List all png files with path
@@ -64,6 +64,7 @@ process_segmented_root_images<-function(path, root.distribution=TRUE, res=2500, 
       index<-index+1
 
       features<-process_image(path=file,
+                              binary=RVE.images,
                               median_filter=median.filter,
                               kernel=as.integer(kernel.size),
                               root_distribution=root.distribution,
