@@ -5,23 +5,26 @@ from PIL import Image
 import pandas as pd
 from scipy import ndimage
 
-def process_image(path, median_filter, kernel, root_distribution, D, DRF):
+def process_image(path, binary, median_filter, kernel, root_distribution, D, DRF):
     
     #path argument is the path to an image file exported by RootPainter
     #All features are imported in pixel units
     
-    #Load image and convert to greyscale
-    # L = R * 299/1000 + G * 587/1000 + B * 114/1000
-    image = np.array(Image.open(path).convert('L'))
+    if (binary==True):
+      image = np.array(Image.open(path))
+      #Replace values>0 by 0. Use value=1 otherwise.
+      image = np.where(image>0, 0, 1)
+    else:
+      # L = R * 299/1000 + G * 587/1000 + B * 114/1000
+      image = np.array(Image.open(path).convert('L'))
+      #Replace values>0 by 1. Keep value=0 otherwise.
+      image = np.where(image>0, 1, 0)
     
     #Get image height
     h = image.shape[0]
     
     #Get image width
     w = image.shape[1]
-    
-    #Replace values>0 by 1. Keep value=0 otherwise.
-    image = np.where(image>0, 1, 0)
     
     #Median filtering
     if (median_filter==True):

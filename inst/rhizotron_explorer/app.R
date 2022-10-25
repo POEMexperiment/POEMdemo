@@ -57,6 +57,10 @@ ui<-fluidPage(
                  checkboxInput(inputId = "POEM_images",
                                label="These are POEM minirhizotron images",
                                value=TRUE),
+                 
+                 checkboxInput(inputId = "binary_images",
+                               label="These are converted segmentations for RhizoVision Explorer",
+                               value=TRUE),
 
                 p(strong("Noise removal")),
 
@@ -265,7 +269,7 @@ ui<-fluidPage(
 
 server <- function(input, output){
 
-  reticulate::source_python(paste(system.file("python", package = "POEM"), "py_functions.py", sep="/"))
+  reticulate::source_python(paste(system.file("python", package = "POEMdemo"), "py_functions.py", sep="/"))
 
   observeEvent(input$copy_images, {
 
@@ -339,6 +343,7 @@ server <- function(input, output){
             incProgress(1/length(files), detail=paste("Image ", index, " of ", length(files), sep=""))
 
             features<-process_image(path=file,
+                                    binary=binary_images,
                                     median_filter=input$median_filter,
                                     kernel=as.integer(input$kernel_size),
                                     root_distribution=input$root_distribution,
