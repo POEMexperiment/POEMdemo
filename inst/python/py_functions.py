@@ -47,13 +47,13 @@ def process_image(path, binary, median_filter, kernel, root_distribution, D, DRF
         
             depth=np.array(range(0, len(px), 1))*(-1)
         
-            mrd=np.sum(depth*np.array(px))/totalpx #Mean rooting depth
+            mrd=np.sum(depth*np.array(px, dtype="int64"))/totalpx #Mean rooting depth
             maxrd=depth[np.max(np.nonzero(px))] #Max rooting depth
             d=np.min(depth[np.cumsum(px)/totalpx <= D/100]) #D value
             drf=np.sum(px[depth<=((1-h)-(DRF/100)*(1-h))])/totalpx #Deep root fraction
             
         else:
-        
+      
             mrd=0
             maxrd=0
             d=0
