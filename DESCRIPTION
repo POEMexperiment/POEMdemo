@@ -2,7 +2,7 @@ Package: POEMdemo
 Type: Package
 Title: Processing of segmented (mini)rhizotron images
 Version: 0.1.0
-Date: 2022-10-20
+Date: 2022-10-26
 Author: Benjamin M. Delory
 Maintainer: Benjamin M. Delory <Benjamin.Delory@leuphana.de>
 Description: R package with functions to process segmented (mini)rhizotron images.

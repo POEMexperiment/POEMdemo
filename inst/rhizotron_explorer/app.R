@@ -394,7 +394,7 @@ server <- function(input, output){
               add_column(Plot=design_POEM$Plot[match(data$Tube, design_POEM$Tube)], .after="Name_experiment") %>%
               add_column(Arrival=design_POEM$Arrival[match(data$Tube, design_POEM$Tube)], .after="Plot") %>%
               add_column(Replicate=design_POEM$Replicate[match(data$Tube, design_POEM$Tube)], .after="Arrival") %>%
-              add_column(Days=round(as.numeric(data$Date-design_POEM$Start[match(data$Tube, design_POEM$Tube)])/(24*60*60)), .after="Date")
+              add_column(Days=round(as.numeric(difftime(data$Date-design_POEM$Start[match(data$Tube, design_POEM$Tube)], units="days"))), .after="Date")
             data$Days[data$Days<=3 & data$Experiment=="POEM2021"]<-0
             data$Arrival<-factor(data$Arrival, levels=c("S", "F", "G", "L"))}
 

@@ -9,6 +9,8 @@ All these steps are described in the following video tutorial:
 
 https://docs.rstudio.com/tutorials/user/using-python-with-rstudio-and-reticulate/
 
+Required Python packages: numpy, PIL, pandas, scipy, shutil, os
+
 # Install the R package POEMdemo
 
 To install the package, run this code in your R console:
